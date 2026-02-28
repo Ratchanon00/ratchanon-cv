@@ -5,191 +5,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - รัชชานนท์ ปานชื่น</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #2c3e50;
-            --accent: #27ae60;
-            --text-main: #333;
-            --text-light: #555;
-            --bg-color: #f4f7f6;
-            --white: #fff;
-        }
-
         body {
-            font-family: 'Sarabun', sans-serif;
-            background-color: #e2e8f0;
+            font-family: 'Sarabun', serif;
+            background-color: #f8f9fa;
+            color: #000;
             margin: 0;
-            padding: 2rem 0;
-            color: var(--text-main);
-            line-height: 1.6;
+            padding: 2rem;
+            line-height: 1.5;
         }
 
-        .cv-wrapper {
+        .cv-container {
             max-width: 800px;
             margin: 0 auto;
-            background: var(--white);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            border-top: 6px solid var(--primary);
+            background: #fff;
+            padding: 50px 60px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         }
 
-        /* Header Layout */
+        /* Header */
         header {
-            display: flex;
-            align-items: center;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            text-align: center;
+            margin-bottom: 25px;
         }
 
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 30px;
-            border: 3px solid #eee;
-        }
-
-        .title-area h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            color: var(--primary);
-        }
-
-        .title-area h2 {
-            margin: 5px 0 15px 0;
-            font-size: 1.2rem;
-            color: var(--accent);
-            font-weight: 500;
-        }
-
-        .contact-info {
-            display: flex;
-            gap: 20px;
-            font-size: 0.9rem;
-            color: var(--text-light);
-            flex-wrap: wrap;
-        }
-
-        /* 2-Column Layout Option */
-        .content {
-            display: flex;
-            gap: 40px;
-        }
-
-        .main-col {
-            flex: 2;
-        }
-
-        .side-col {
-            flex: 1;
-        }
-
-        /* Section Styling */
-        section {
-            margin-bottom: 30px;
-        }
-
-        h3.section-title {
-            color: var(--primary);
-            font-size: 1.3rem;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
+        header h1 {
+            font-size: 28pt;
+            margin: 0 0 5px 0;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        .item {
-            margin-bottom: 20px;
+        header .contact-info {
+            font-size: 11pt;
+            color: #333;
+        }
+
+        header .contact-info span {
+            margin: 0 8px;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 25px;
+        }
+
+        h2.section-title {
+            font-size: 14pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 1px solid #000;
+            padding-bottom: 3px;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        /* CV Item */
+        .cv-item {
+            margin-bottom: 15px;
         }
 
         .item-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
 
-        .item-header h4 {
+        .item-header h3 {
+            font-size: 12pt;
+            font-weight: 700;
             margin: 0;
-            font-size: 1.1rem;
-            color: var(--text-main);
         }
 
         .item-header .date {
-            font-size: 0.85rem;
-            color: var(--accent);
-            font-weight: 600;
+            font-size: 11pt;
         }
 
         .item-sub {
+            display: flex;
+            justify-content: space-between;
+            font-size: 11pt;
             font-style: italic;
-            color: var(--text-light);
-            margin-bottom: 8px;
-            font-size: 0.95rem;
+            margin-bottom: 5px;
+        }
+
+        .item-sub .location {
+            font-style: normal;
         }
 
         ul {
             margin: 0;
             padding-left: 20px;
-            color: var(--text-light);
+            font-size: 11pt;
         }
 
         ul li {
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
 
-        /* Skills Styling */
-        .skill-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .skill-list li {
-            background-color: var(--bg-color);
-            padding: 8px 12px;
-            border-radius: 4px;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            border-left: 3px solid var(--accent);
-        }
-
-        /* Print Media */
+        /* Print Settings */
         @media print {
             body {
-                background: white;
+                background: none;
                 padding: 0;
             }
 
-            .cv-wrapper {
+            .cv-container {
                 box-shadow: none;
-                border-top: none;
-                max-width: 100%;
                 padding: 0;
-            }
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
-            .content {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .profile-img {
-                margin: 0 0 20px 0;
-            }
-
-            .contact-info {
-                justify-content: center;
+                max-width: 100%;
+                border: none;
             }
         }
     </style>
@@ -197,103 +125,98 @@
 
 <body>
 
-    <div class="cv-wrapper">
+    <div class="cv-container">
         <header>
-            <img src="profile.jpg" alt="Profile of Ratchanon Panchuen" class="profile-img">
-            <div class="title-area">
-                <h1>รัชชานนท์ ปานชื่น</h1>
-                <h2>นักศึกษาวิศวกรรมคอมพิวเตอร์ และ นักกีฬาฟุตบอล</h2>
-                <div class="contact-info">
-                    <span>📧 ratchanon.p@example.com</span>
-                    <span>📱 08X-XXX-XXXX</span>
-                    <span>📍 สุโขทัย, ไทย</span>
-                    <span>🔗 github.com/ratchanon-p</span>
-                </div>
+            <h1>รัชชานนท์ ปานชื่น</h1>
+            <div class="contact-info">
+                <span>📞 08X-XXX-XXXX</span> |
+                <span>✉️ ratchanon.p@example.com</span> |
+                <span>📍 สุโขทัย, ประเทศไทย</span><br>
+                <span>🔗 github.com/ratchanon-p</span>
             </div>
         </header>
 
-        <div class="content">
-            <div class="main-col">
-                <section>
-                    <h3 class="section-title">ข้อมูลส่วนตัว (Profile)</h3>
-                    <p style="color: var(--text-light); text-align: justify; margin-top: 0;">
-                        นักศึกษาชั้นปีที่ 1 สาขาวิชาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยราชภัฏพิบูลสงคราม
-                        มีความมุ่งมั่นในการเรียนรู้ทั้งวิชาการและเทคโนโลยี ควบคู่สปิริตนักกีฬาฟุตบอล
-                        เติบโตจากครอบครัวที่อุทิศตนเพื่อสังคม มีความพร้อมในการปรับตัวและการทำงานเป็นทีม
-                    </p>
-                </section>
+        <section>
+            <h2 class="section-title">ข้อมูลส่วนตัว (Profile summary)</h2>
+            <p style="font-size: 11pt; margin-top: 0; text-align: justify;">
+                นักศึกษาชั้นปีที่ 1 สาขาวิชาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยราชภัฏพิบูลสงคราม
+                มีความมุ่งมั่นในการเรียนรู้ทั้งด้านวิชาการและเทคโนโลยี ควบคู่ไปกับการพัฒนาทักษะทางด้านกีฬาฟุตบอล
+                เติบโตจากครอบครัวที่อุทิศตนเพื่อสังคม มีความพร้อมในการปรับตัวและการทำงานเป็นทีมในสภาพแวดล้อมที่หลากหลาย
+            </p>
+        </section>
 
-                <section>
-                    <h3 class="section-title">ประวัติการศึกษา (Education)</h3>
-                    <div class="item">
-                        <div class="item-header">
-                            <h4>มหาวิทยาลัยราชภัฏพิบูลสงคราม</h4>
-                            <span class="date">2566 - ปัจจุบัน</span>
-                        </div>
-                        <div class="item-sub">นักศึกษาชั้นปีที่ 1 สาขาวิชาวิศวกรรมคอมพิวเตอร์</div>
-                        <ul>
-                            <li>เน้นการพัฒนาทักษะด้านเทคโนโลยีสารสนเทศ</li>
-                            <li>มุ่งตอบสนองความต้องการของตลาดงานสายไอทีในภูมิภาค</li>
-                        </ul>
-                    </div>
-
-                    <div class="item">
-                        <div class="item-header">
-                            <h4>โรงเรียนสุโขทัยวิทยาคม</h4>
-                            <span class="date">จบปี 2565</span>
-                        </div>
-                        <div class="item-sub">มัธยมศึกษาตอนปลาย (สพม. สุโขทัย)</div>
-                        <ul>
-                            <li>ตัวแทนนักเรียนแข่งขันศิลปหัตถกรรมนักเรียนระดับภูมิภาค/ชาติ</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section>
-                    <h3 class="section-title">ประสบการณ์และกิจกรรม (Experience)</h3>
-                    <div class="item">
-                        <div class="item-header">
-                            <h4>ตัวแทนแข่งขันงานศิลปหัตถกรรมนักเรียน</h4>
-                            <span class="date">วิชาการ</span>
-                        </div>
-                        <div class="item-sub">ร่วมกับกลุ่มโรงเรียนสุโขทัย 1</div>
-                        <ul>
-                            <li>ทำงานร่วมกันเป็นทีม นำเสนอผลงานอย่างเป็นระบบภายใต้ที่ปรึกษา</li>
-                        </ul>
-                    </div>
-                    <div class="item">
-                        <div class="item-header">
-                            <h4>นักกีฬาฟุตบอลเยาวชน</h4>
-                            <span class="date">กีฬา</span>
-                        </div>
-                        <div class="item-sub">แข่งขันระดับสถาบันการศึกษา และ กศน. เกมส์</div>
-                        <ul>
-                            <li>มีวินัยในการฝึกซ้อม และนำ Data Analytics มาประยุกต์ใช้เพื่อพัฒนาฝีเท้า</li>
-                        </ul>
-                    </div>
-                </section>
+        <section>
+            <h2 class="section-title">ประวัติการศึกษา (Education)</h2>
+            <div class="cv-item">
+                <div class="item-header">
+                    <h3>มหาวิทยาลัยราชภัฏพิบูลสงคราม (พบค.)</h3>
+                    <span class="date">2566 - ปัจจุบัน</span>
+                </div>
+                <div class="item-sub">
+                    <span>นักศึกษาชั้นปีที่ 1 สาขาวิชาวิศวกรรมคอมพิวเตอร์ (รหัสนักศึกษา: 6612247050)</span>
+                    <span class="location">พิษณุโลก, ประเทศไทย</span>
+                </div>
+                <ul>
+                    <li>ศึกษาในหลักสูตรที่มุ่งเน้นความต้องการของตลาดแรงงานในภูมิภาค</li>
+                    <li>พัฒนาทักษะทางเทคโนโลยีสารสนเทศเพื่อเตรียมพร้อมสู่ยุคเศรษฐกิจดิจิทัล</li>
+                </ul>
             </div>
 
-            <div class="side-col">
-                <section>
-                    <h3 class="section-title">ทักษะทางเทคนิค</h3>
-                    <ul class="skill-list">
-                        <li>วิศวกรรมคอมพิวเตอร์</li>
-                        <li>เทคโนโลยีโครงข่าย</li>
-                        <li>การวิเคราะห์ข้อมูล</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3 class="section-title">จุดแข็ง (Soft Skills)</h3>
-                    <ul class="skill-list">
-                        <li>ทำงานร่วมกันเป็นทีม</li>
-                        <li>ทัศนคติแบบมืออาชีพ</li>
-                        <li>ความสามารถรอบด้าน</li>
-                    </ul>
-                </section>
+            <div class="cv-item">
+                <div class="item-header">
+                    <h3>โรงเรียนสุโขทัยวิทยาคม</h3>
+                    <span class="date">จบการศึกษา 2565</span>
+                </div>
+                <div class="item-sub">
+                    <span>มัธยมศึกษาตอนปลาย (สังกัด สพม. สุโขทัย)</span>
+                    <span class="location">สุโขทัย, ประเทศไทย</span>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">ประสบการณ์และกิจกรรม (Experience & Activities)</h2>
+            <div class="cv-item">
+                <div class="item-header">
+                    <h3>ตัวแทนแข่งขันงานศิลปหัตถกรรมนักเรียน</h3>
+                    <span class="date">วิชาการ</span>
+                </div>
+                <div class="item-sub">
+                    <span>กลุ่มโรงเรียนสุโขทัย 1</span>
+                </div>
+                <ul>
+                    <li>ร่วมกันเป็นทีมเพื่อนำเสนอผลงานระดับภูมิภาค/ชาติ ภายใต้การดูแลของที่ปรึกษา</li>
+                    <li>แสดงความสามารถในการนำเสนอและบูรณาการความรู้ทางวิชาการเข้ากับการปฏิบัติจริง</li>
+                </ul>
+            </div>
+
+            <div class="cv-item">
+                <div class="item-header">
+                    <h3>นักกีฬาฟุตบอลเยาวชน</h3>
+                    <span class="date">กีฬาแข่งขัน</span>
+                </div>
+                <div class="item-sub">
+                    <span>แข่งขันระดับสถาบันการศึกษา และ กศน. เกมส์</span>
+                </div>
+                <ul>
+                    <li>เรียนรู้ทัศนคติการเป็นนักกีฬามืออาชีพ (Professional Mindset)
+                        และมีวินัยในการฝึกซ้อมอย่างเคร่งครัด</li>
+                    <li>เปิดรับความรู้และประยุกต์ใช้วิทยาศาสตร์การกีฬาสมัยใหม่และการวิเคราะห์ข้อมูล (Data Analytics)
+                        มาพัฒนาศักยภาพตนเอง</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">ทักษะความสามารถ (Skills & Competencies)</h2>
+            <ul>
+                <li><strong>ทักษะทางเทคนิค (Hard Skills):</strong> วิศวกรรมคอมพิวเตอร์พื้นฐาน,
+                    เทคโนโลยีสารสนเทศโครงข่าย, การวิเคราะห์ข้อมูลเบื้องต้น</li>
+                <li><strong>ทักษะทางสังคม (Soft Skills):</strong> ความสามารถรอบด้านในการทำงานเป็นทีม,
+                    ทัศนคติในการแก้ปัญหาแบบมืออาชีพ, การสื่อสารและการประสานงาน</li>
+                <li><strong>ภาษา (Languages):</strong> ภาษาไทย (Native), ภาษาอังกฤษ (Intermediate)</li>
+            </ul>
+        </section>
     </div>
 
 </body>
