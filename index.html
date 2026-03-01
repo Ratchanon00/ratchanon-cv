@@ -4,383 +4,582 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - รัชชานนท์ ปานชื่น</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap"
+    <title>RATCHANON.DEV // Portfolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Sarabun:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --primary: #2c3e50;
-            --accent: #27ae60;
-            --text-main: #333;
-            --text-light: #555;
-            --bg-color: #f4f7f6;
-            --white: #fff;
+            --bg: #0d1117;
+            --bg-card: #161b22;
+            --bg-hover: #1f2937;
+            --border: #30363d;
+            --green: #3fb950;
+            --blue: #58a6ff;
+            --orange: #f78166;
+            --yellow: #e3b341;
+            --text: #c9d1d9;
+            --text-muted: #6e7681;
+            --text-bright: #f0f6fc;
+            --mono: 'Share Tech Mono', 'Courier New', monospace;
+            --thai: 'Sarabun', sans-serif;
         }
 
-        body {
-            font-family: 'Sarabun', sans-serif;
-            background-color: #e2e8f0;
+        * {
+            box-sizing: border-box;
             margin: 0;
-            padding: 2rem 0;
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        .cv-wrapper {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--white);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-            border-top: 6px solid var(--primary);
-        }
-
-        /* Header Layout */
-        header {
-            display: flex;
-            align-items: center;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 30px;
-            border: 3px solid #eee;
-        }
-
-        .title-area h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            color: var(--primary);
-        }
-
-        .title-area h2 {
-            margin: 5px 0 15px 0;
-            font-size: 1.2rem;
-            color: var(--accent);
-            font-weight: 500;
-        }
-
-        .contact-info {
-            display: flex;
-            gap: 20px;
-            font-size: 0.9rem;
-            color: var(--text-light);
-            flex-wrap: wrap;
-        }
-
-        /* 2-Column Layout Option */
-        .content {
-            display: flex;
-            gap: 40px;
-        }
-
-        .main-col {
-            flex: 2;
-        }
-
-        .side-col {
-            flex: 1;
-        }
-
-        /* Section Styling */
-        section {
-            margin-bottom: 30px;
-        }
-
-        h3.section-title {
-            color: var(--primary);
-            font-size: 1.3rem;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .item {
-            margin-bottom: 20px;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 5px;
-        }
-
-        .item-header h4 {
-            margin: 0;
-            font-size: 1.1rem;
-            color: var(--text-main);
-        }
-
-        .item-header .date {
-            font-size: 0.85rem;
-            color: var(--accent);
-            font-weight: 600;
-        }
-
-        .item-sub {
-            font-style: italic;
-            color: var(--text-light);
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-
-        ul {
-            margin: 0;
-            padding-left: 20px;
-            color: var(--text-light);
-        }
-
-        ul li {
-            margin-bottom: 5px;
-        }
-
-        /* Skills Styling */
-        .skill-list {
-            list-style: none;
             padding: 0;
         }
 
-        .skill-list li {
-            background-color: var(--bg-color);
-            padding: 8px 12px;
-            border-radius: 4px;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            border-left: 3px solid var(--accent);
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--thai);
+            min-height: 100vh;
+            line-height: 1.7;
         }
 
-        /* Print Media */
-        @media print {
-            body {
-                background: white;
-                padding: 0;
-            }
-
-            .cv-wrapper {
-                box-shadow: none;
-                border-top: none;
-                max-width: 100%;
-                padding: 0;
-            }
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
-            .content {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .profile-img {
-                margin: 0 0 20px 0;
-            }
-
-            .contact-info {
-                justify-content: center;
-            }
-        }
-
-        /* Project Nav Bar */
-        .project-nav {
-            max-width: 800px;
-            margin: 0 auto 0 auto;
-            padding: 14px 20px;
-            background: #1a2332;
-            border-bottom: 2px solid #27ae60;
+        /* ── TOP NAV ── */
+        .top-nav {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 24px;
             display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
             align-items: center;
-            font-family: 'Courier New', monospace;
+            gap: 12px;
+            flex-wrap: wrap;
+            font-family: var(--mono);
             font-size: 0.78rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .project-nav .nav-label {
-            color: #4a5568;
-            margin-right: 4px;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+        .top-nav .prompt {
+            color: var(--text-muted);
+            margin-right: 8px;
         }
 
-        .project-nav a {
-            color: #27ae60;
+        .top-nav a {
+            color: var(--green);
             text-decoration: none;
-            border: 1px solid #27ae60;
-            padding: 4px 12px;
+            border: 1px solid var(--green);
+            padding: 4px 14px;
             border-radius: 2px;
             letter-spacing: 0.05em;
-            transition: all 0.2s ease;
+            transition: all 0.2s;
+        }
+
+        .top-nav a:hover {
+            background: var(--green);
+            color: var(--bg);
+            box-shadow: 0 0 14px rgba(63, 185, 80, 0.4);
+        }
+
+        .top-nav a.blue {
+            color: var(--blue);
+            border-color: var(--blue);
+        }
+
+        .top-nav a.blue:hover {
+            background: var(--blue);
+            color: var(--bg);
+            box-shadow: 0 0 14px rgba(88, 166, 255, 0.4);
+        }
+
+        .top-nav .spacer {
+            flex: 1;
+        }
+
+        .top-nav .status {
+            color: var(--text-muted);
+            font-size: 0.7rem;
+        }
+
+        .status-dot {
             display: inline-block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--green);
+            margin-right: 6px;
+            box-shadow: 0 0 6px var(--green);
+            animation: pulse 2s infinite;
         }
 
-        .project-nav a:hover {
-            background: #27ae60;
-            color: #0d1117;
-            box-shadow: 0 0 12px rgba(39, 174, 96, 0.5);
-        }
+        @keyframes pulse {
 
-        .project-nav a.highlight {
-            color: #3b82f6;
-            border-color: #3b82f6;
-        }
-
-        .project-nav a.highlight:hover {
-            background: #3b82f6;
-            color: #fff;
-            box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
-        }
-
-        /* Mobile adjust */
-        @media (max-width: 600px) {
-            .project-nav {
-                padding: 10px 12px;
-                gap: 8px;
+            0%,
+            100% {
+                opacity: 1;
             }
+
+            50% {
+                opacity: 0.4;
+            }
+        }
+
+        /* ── MAIN LAYOUT ── */
+        .main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            border: 1px solid var(--border);
+            border-top: 3px solid var(--green);
+            background: var(--bg-card);
+            padding: 36px 40px;
+            margin-bottom: 24px;
+            border-radius: 6px;
+        }
+
+        .hero-label {
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--text-bright);
+            letter-spacing: -0.02em;
+            margin-bottom: 4px;
+        }
+
+        .hero h2 {
+            font-size: 1.1rem;
+            color: var(--green);
+            font-family: var(--mono);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .hero .summary {
+            color: var(--text);
+            max-width: 620px;
+            font-size: 0.97rem;
+            line-height: 1.75;
+            border-left: 3px solid var(--border);
+            padding-left: 16px;
+        }
+
+        .contact-row {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        .contact-row span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .contact-row a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        .contact-row a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── GRID ── */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 24px 20px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* ── CARD ── */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 24px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            border-color: #444c56;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-full {
+            grid-column: 1 / -1;
+        }
+
+        .card-label {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+
+        .card-label .icon {
+            color: var(--green);
+            margin-right: 6px;
+        }
+
+        /* ── TIMELINE ── */
+        .timeline-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .tl-dot {
+            flex-shrink: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--green);
+            margin-top: 7px;
+            box-shadow: 0 0 6px var(--green);
+        }
+
+        .tl-dot.blue {
+            background: var(--blue);
+            box-shadow: 0 0 6px var(--blue);
+        }
+
+        .tl-dot.orange {
+            background: var(--orange);
+            box-shadow: 0 0 6px var(--orange);
+        }
+
+        .tl-body h4 {
+            color: var(--text-bright);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .tl-body h4 a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        .tl-body h4 a:hover {
+            text-decoration: underline;
+        }
+
+        .tl-body .role {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+
+        .tl-body ul {
+            padding-left: 18px;
+            color: var(--text);
+            font-size: 0.93rem;
+        }
+
+        .tl-body ul li {
+            margin-bottom: 4px;
+        }
+
+        /* ── SKILL TAGS ── */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 3px;
+            border: 1px solid var(--border);
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        .tag.green {
+            border-color: var(--green);
+            color: var(--green);
+        }
+
+        .tag.blue {
+            border-color: var(--blue);
+            color: var(--blue);
+        }
+
+        .tag.orange {
+            border-color: var(--orange);
+            color: var(--orange);
+        }
+
+        /* ── PROJECT CARD ── */
+        .project-link {
+            display: block;
+            padding: 16px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-bottom: 12px;
+        }
+
+        .project-link:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-link:hover {
+            border-color: var(--blue);
+            background: var(--bg-hover);
+        }
+
+        .project-link .proj-name {
+            font-family: var(--mono);
+            color: var(--blue);
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .project-link .proj-desc {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .project-link .proj-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .proj-tag {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            padding: 2px 8px;
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--blue);
+            border-radius: 2px;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="project-nav">
-        <span class="nav-label">// PROJECTS</span>
+    <!-- TOP NAV -->
+    <nav class="top-nav">
+        <span class="prompt">~/portfolio $</span>
         <a href="https://ratchanon00.github.io/jibchain-sensor-app/" target="_blank" rel="noopener noreferrer"
-            class="highlight">[[ JIBCHAIN_SENSOR ]]</a>
+            class="blue">[[ JIBCHAIN_SENSOR ]]</a>
         <a href="https://ratchanon00.github.io/ratchanon-cv/" target="_blank" rel="noopener noreferrer">[[ CV_ONLINE
             ]]</a>
-    </div>
+        <span class="spacer"></span>
+        <span class="status"><span class="status-dot"></span>ONLINE</span>
+    </nav>
 
-    <div class="cv-wrapper">
-        <header>
-            <div class="title-area">
-                <h1>รัชชานนท์ ปานชื่น</h1>
-                <h2>นักศึกษาวิศวกรรมคอมพิวเตอร์ และ นักกีฬาฟุตบอล</h2>
-                <div class="contact-info">
-                    <span>📧 ratchanon.p@example.com</span>
-                    <span>📱 08X-XXX-XXXX</span>
-                    <span>📍 สุโขทัย, ไทย</span>
-                    <span>🔗 github.com/ratchanon-p</span>
-                </div>
-            </div>
-        </header>
+    <!-- MAIN -->
+    <div class="main">
 
-        <div class="content">
-            <div class="main-col">
-                <section>
-                    <h3 class="section-title">ข้อมูลส่วนตัว (Profile)</h3>
-                    <p style="color: var(--text-light); text-align: justify; margin-top: 0;">
-                        นักศึกษาชั้นปีที่ 1 สาขาวิชาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยราชภัฏพิบูลสงคราม
-                        มีความมุ่งมั่นในการเรียนรู้ทั้งวิชาการและเทคโนโลยี ควบคู่สปิริตนักกีฬาฟุตบอล
-                        เติบโตจากครอบครัวที่อุทิศตนเพื่อสังคม มีความพร้อมในการปรับตัวและการทำงานเป็นทีม
-                    </p>
-                </section>
-
-                <section>
-                    <h3 class="section-title">ประวัติการศึกษา (Education)</h3>
-                    <div class="item">
-                        <div class="item-header">
-                            <h4>มหาวิทยาลัยราชภัฏพิบูลสงคราม</h4>
-                            <span class="date">2566 - ปัจจุบัน</span>
-                        </div>
-                        <div class="item-sub">นักศึกษาชั้นปีที่ 1 สาขาวิชาวิศวกรรมคอมพิวเตอร์</div>
-                        <ul>
-                            <li>เน้นการพัฒนาทักษะด้านเทคโนโลยีสารสนเทศ</li>
-                            <li>มุ่งตอบสนองความต้องการของตลาดงานสายไอทีในภูมิภาค</li>
-                        </ul>
-                    </div>
-
-                    <div class="item">
-                        <div class="item-header">
-                            <h4>โรงเรียนสุโขทัยวิทยาคม</h4>
-                            <span class="date">จบปี 2565</span>
-                        </div>
-                        <div class="item-sub">มัธยมศึกษาตอนปลาย (สพม. สุโขทัย)</div>
-                        <ul>
-                            <li>ตัวแทนนักเรียนแข่งขันศิลปหัตถกรรมนักเรียนระดับภูมิภาค/ชาติ</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section>
-                    <h3 class="section-title">ประสบการณ์และกิจกรรม (Experience)</h3>
-                    <div class="item">
-                        <div class="item-header">
-                            <h4>ตัวแทนแข่งขันงานศิลปหัตถกรรมนักเรียน</h4>
-                            <span class="date">วิชาการ</span>
-                        </div>
-                        <div class="item-sub">ร่วมกับกลุ่มโรงเรียนสุโขทัย 1</div>
-                        <ul>
-                            <li>ทำงานร่วมกันเป็นทีม นำเสนอผลงานอย่างเป็นระบบภายใต้ที่ปรึกษา</li>
-                        </ul>
-                    </div>
-                    <div class="item">
-                        <div class="item-header">
-                            <h4>นักกีฬาฟุตบอลเยาวชน</h4>
-                            <span class="date">กีฬา</span>
-                        </div>
-                        <div class="item-sub">แข่งขันระดับสถาบันการศึกษา และ กศน. เกมส์</div>
-                        <ul>
-                            <li>มีวินัยในการฝึกซ้อม และนำ Data Analytics มาประยุกต์ใช้เพื่อพัฒนาฝีเท้า</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section>
-                    <h3 class="section-title">ผลงานเด่น (Featured Projects)</h3>
-                    <div class="item">
-                        <div class="item-header">
-                            <h4><a href="https://ratchanon00.github.io/jibchain-sensor-app/" target="_blank"
-                                    rel="noopener noreferrer"
-                                    style="color: var(--primary); text-decoration: none;">JIBCHAIN Sensor Dashboard
-                                    ↗</a></h4>
-                            <span class="date">Web Application</span>
-                        </div>
-                        <div class="item-sub">ระบบแสดงผลข้อมูลเซนเซอร์แบบ Real-time บน JIBCHAIN L1</div>
-                        <ul>
-                            <li>ใช้ Viem.js เชื่อมต่อ Smart Contract และประมวลผลข้อมูลระดับวินาที</li>
-                            <li>แสดงกราฟย้อนหลัง 24 ชั่วโมงด้วย Recharts พร้อมระบบสลับมุมมอง</li>
-                            <li>จัดการข้อมูลระดับ x10000 เพื่อความแม่นยำสูงสุดในหน่วยเมตร</li>
-                        </ul>
-                    </div>
-                </section>
-            </div>
-
-            <div class="side-col">
-                <section>
-                    <h3 class="section-title">ทักษะทางเทคนิค</h3>
-                    <ul class="skill-list">
-                        <li>วิศวกรรมคอมพิวเตอร์</li>
-                        <li>เทคโนโลยีโครงข่าย</li>
-                        <li>การวิเคราะห์ข้อมูล</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3 class="section-title">จุดแข็ง (Soft Skills)</h3>
-                    <ul class="skill-list">
-                        <li>ทำงานร่วมกันเป็นทีม</li>
-                        <li>ทัศนคติแบบมืออาชีพ</li>
-                        <li>ความสามารถรอบด้าน</li>
-                    </ul>
-                </section>
+        <!-- HERO -->
+        <div class="hero">
+            <div class="hero-label">// USER_PROFILE :: ACTIVE</div>
+            <h1>รัชชานนท์ ปานชื่น</h1>
+            <h2>&gt; นักศึกษาวิศวกรรมคอมพิวเตอร์ &amp; นักกีฬาฟุตบอล_</h2>
+            <p class="summary">
+                นักศึกษาชั้นปีที่ 1 สาขาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยราชภัฏพิบูลสงคราม
+                มีความมุ่งมั่นในการเรียนรู้เทคโนโลยีและพัฒนาโปรเจกต์จริง ควบคู่กับสปิริตนักกีฬาฟุตบอล
+                เติบโตจากครอบครัวที่อุทิศตนเพื่อสังคม มีความพร้อมปรับตัวและทำงานเป็นทีม
+            </p>
+            <div class="contact-row">
+                <span>📧 ratchanon.p@example.com</span>
+                <span>📱 08X-XXX-XXXX</span>
+                <span>📍 สุโขทัย, ไทย</span>
+                <span>🔗 <a href="https://github.com/Ratchanon00" target="_blank">github.com/Ratchanon00</a></span>
             </div>
         </div>
-    </div>
 
+        <!-- GRID ROW 1 -->
+        <div class="grid">
+
+            <!-- EDUCATION -->
+            <div class="card">
+                <div class="card-label"><span class="icon">◆</span>EDUCATION</div>
+                <div class="timeline-item">
+                    <div class="tl-dot"></div>
+                    <div class="tl-body">
+                        <h4>มหาวิทยาลัยราชภัฏพิบูลสงคราม</h4>
+                        <div class="role">B.Eng Computer Engineering &nbsp;|&nbsp; 2566 – ปัจจุบัน</div>
+                        <ul>
+                            <li>เน้นทักษะด้านเทคโนโลยีสารสนเทศ</li>
+                            <li>มุ่งตอบสนองตลาดงานสายไอทีภูมิภาค</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-dot" style="background:#8b949e; box-shadow:none;"></div>
+                    <div class="tl-body">
+                        <h4>โรงเรียนสุโขทัยวิทยาคม</h4>
+                        <div class="role" style="color: var(--text-muted);">มัธยมปลาย &nbsp;|&nbsp; จบ 2565</div>
+                        <ul>
+                            <li>ตัวแทนแข่งขันศิลปหัตถกรรมนักเรียน ระดับภูมิภาค/ชาติ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SKILLS -->
+            <div class="card">
+                <div class="card-label"><span class="icon">◆</span>SKILLS</div>
+                <div style="margin-bottom: 14px;">
+                    <div
+                        style="font-size:0.75rem; color:var(--text-muted); margin-bottom:8px; font-family:var(--mono);">
+                        // TECHNICAL</div>
+                    <div class="tags">
+                        <span class="tag green">Viem.js</span>
+                        <span class="tag green">React</span>
+                        <span class="tag green">Web3</span>
+                        <span class="tag blue">HTML / CSS</span>
+                        <span class="tag blue">JavaScript</span>
+                        <span class="tag blue">เทคโนโลยีโครงข่าย</span>
+                        <span class="tag">การวิเคราะห์ข้อมูล</span>
+                    </div>
+                </div>
+                <div>
+                    <div
+                        style="font-size:0.75rem; color:var(--text-muted); margin-bottom:8px; font-family:var(--mono);">
+                        // SOFT SKILLS</div>
+                    <div class="tags">
+                        <span class="tag orange">ทำงานเป็นทีม</span>
+                        <span class="tag orange">ปรับตัวสูง</span>
+                        <span class="tag orange">มืออาชีพ</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- GRID ROW 2 -->
+        <div class="grid">
+
+            <!-- PROJECTS -->
+            <div class="card card-full">
+                <div class="card-label"><span class="icon">◆</span>FEATURED_PROJECTS</div>
+
+                <a href="https://ratchanon00.github.io/jibchain-sensor-app/" target="_blank" rel="noopener noreferrer"
+                    class="project-link">
+                    <div class="proj-name">&gt; JIBCHAIN_SENSOR_DASHBOARD ↗</div>
+                    <div class="proj-desc">ระบบแสดงผลข้อมูลเซนเซอร์น้ำแบบ Real-time จาก Smart Contract บน JIBCHAIN L1
+                        Blockchain พร้อมกราฟย้อนหลัง 24 ชั่วโมงและตารางสรุปข้อมูล</div>
+                    <div class="proj-tags">
+                        <span class="proj-tag">Viem.js</span>
+                        <span class="proj-tag">React</span>
+                        <span class="proj-tag">Recharts</span>
+                        <span class="proj-tag">JIBCHAIN L1</span>
+                        <span class="proj-tag">Smart Contract</span>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- GRID ROW 3 -->
+        <div class="grid">
+
+            <!-- ACTIVITY -->
+            <div class="card">
+                <div class="card-label"><span class="icon">◆</span>EXPERIENCE</div>
+                <div class="timeline-item">
+                    <div class="tl-dot blue"></div>
+                    <div class="tl-body">
+                        <h4>นักกีฬาฟุตบอลเยาวชน</h4>
+                        <div class="role">ระดับสถาบัน / กศน. เกมส์</div>
+                        <ul>
+                            <li>วินัยในการฝึกซ้อมและนำ Data Analytics มาพัฒนาฝีเท้า</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="tl-dot orange"></div>
+                    <div class="tl-body">
+                        <h4>ตัวแทนแข่งขันศิลปหัตถกรรมนักเรียน</h4>
+                        <div class="role" style="color:var(--orange)">กลุ่มโรงเรียนสุโขทัย 1</div>
+                        <ul>
+                            <li>ทำงานร่วมกันเป็นทีม นำเสนอผลงานระดับชาติ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LANG -->
+            <div class="card">
+                <div class="card-label"><span class="icon">◆</span>LANGUAGES</div>
+                <div style="margin-bottom: 16px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:0.88rem;">
+                        <span>ภาษาไทย</span>
+                        <span style="font-family:var(--mono); color:var(--green);">NATIVE</span>
+                    </div>
+                    <div style="height: 4px; background: var(--border); border-radius:2px;">
+                        <div style="height:100%; width:100%; background: var(--green); border-radius:2px;"></div>
+                    </div>
+                </div>
+                <div>
+                    <div style="display:flex; justify-content:space-between; margin-bottom:6px; font-size:0.88rem;">
+                        <span>ภาษาอังกฤษ</span>
+                        <span style="font-family:var(--mono); color:var(--blue);">60%</span>
+                    </div>
+                    <div style="height: 4px; background: var(--border); border-radius:2px;">
+                        <div style="height:100%; width:60%; background: var(--blue); border-radius:2px;"></div>
+                    </div>
+                </div>
+                <div style="margin-top:24px; font-family:var(--mono); font-size:0.7rem; color:var(--text-muted);">
+                    // BLOCKCHAIN<br>
+                    <span style="color:var(--green);">JIBCHAIN L1</span> | Chain ID: 8899<br>
+                    <span style="color:var(--blue);">Smart Contract</span> | Viem.js
+                </div>
+            </div>
+
+        </div>
+
+        <div
+            style="text-align:center; font-family:var(--mono); font-size:0.7rem; color:var(--text-muted); margin-top:40px;">
+            // RATCHANON.DEV &nbsp;|&nbsp; PBRU Computer Engineering &nbsp;|&nbsp; 2568
+        </div>
+
+    </div>
 </body>
 
 </html>
