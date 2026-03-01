@@ -192,10 +192,77 @@
                 justify-content: center;
             }
         }
+
+        /* Project Nav Bar */
+        .project-nav {
+            max-width: 800px;
+            margin: 0 auto 0 auto;
+            padding: 14px 20px;
+            background: #1a2332;
+            border-bottom: 2px solid #27ae60;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+            font-family: 'Courier New', monospace;
+            font-size: 0.78rem;
+        }
+
+        .project-nav .nav-label {
+            color: #4a5568;
+            margin-right: 4px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .project-nav a {
+            color: #27ae60;
+            text-decoration: none;
+            border: 1px solid #27ae60;
+            padding: 4px 12px;
+            border-radius: 2px;
+            letter-spacing: 0.05em;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .project-nav a:hover {
+            background: #27ae60;
+            color: #0d1117;
+            box-shadow: 0 0 12px rgba(39, 174, 96, 0.5);
+        }
+
+        .project-nav a.highlight {
+            color: #3b82f6;
+            border-color: #3b82f6;
+        }
+
+        .project-nav a.highlight:hover {
+            background: #3b82f6;
+            color: #fff;
+            box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Mobile adjust */
+        @media (max-width: 600px) {
+            .project-nav {
+                padding: 10px 12px;
+                gap: 8px;
+            }
+        }
     </style>
 </head>
 
 <body>
+
+    <div class="project-nav">
+        <span class="nav-label">// PROJECTS</span>
+        <a href="https://ratchanon00.github.io/jibchain-sensor-app/" target="_blank" rel="noopener noreferrer"
+            class="highlight">[[ JIBCHAIN_SENSOR ]]</a>
+        <a href="https://ratchanon00.github.io/ratchanon-cv/" target="_blank" rel="noopener noreferrer">[[ CV_ONLINE
+            ]]</a>
+    </div>
 
     <div class="cv-wrapper">
         <header>
